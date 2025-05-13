@@ -29,7 +29,6 @@ app.post('/upload', upload.single('imagen'), (req, res) => {
         Key: Date.now() + '_' + req.file.originalname,
         Body: req.file.buffer,
         ContentType: req.file.memetype,
-        ACL: 'public-read'
     };
 
     s3.upload(params, (err, data) => {
