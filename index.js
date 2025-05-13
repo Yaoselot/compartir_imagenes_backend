@@ -36,7 +36,7 @@ app.post('/upload', upload.single('imagen'), (req, res) => {
             console.error('Error al subir a S3:', err);
             return res.status(500).json({error: 'Error al subir el archivo'});
         }
-        res.json({url: data.Locaction});
+        res.json({url: data.Location});
     });
 });
 
